@@ -11,7 +11,6 @@ const {
 } = props
 
 let [video, setVideo] = useState(``);
-
 const listUpdater = () => {
             return props.trackList.map((track) => {
                     return (
