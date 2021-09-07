@@ -6,6 +6,7 @@ import Video from "./Video"
 const TrackList = (props) => {
 const {
     className,
+    youtubeVideo,
     onClick,
     trackList,
 } = props
@@ -26,7 +27,7 @@ return (
         <h1 onClick={()=>setVideo(`https://www.youtube.com/watch?v=1w7OgIMMRc4`)}>Recent Songs</h1>
         {listUpdater()}
         </div>
-        <Video video={video}/>
+        <Video youtubeVideo={youtubeVideo}/>
     </div>
 )
 }

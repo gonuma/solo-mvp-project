@@ -8,7 +8,9 @@ function App(props) {
   const { onClick } = props;
 
   const [trackList, setTrackList] = useState([]);
-  useEffect(() => {}, []);
+  const [youtubeVideo, setYoutubeVideo] = useState(
+    "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  );
 
   const API = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
   const resultLimit = 1;
@@ -22,14 +24,17 @@ function App(props) {
         if (track.song_name.includes(" ")) {
           urlSong = track.song_name.replaceAll(" ", "%20");
         }
+        let urlGroup = track.band_name;
+        if (track.band_name.includes(" ")) {
+          urlGroup = track.band_name.replaceAll(" ", "%20");
+        }
+        let urlQuery = `${urlGroup}%20${urlSong}`;
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&order=viewCount&q=${urlSong}&key=${API}`,
+          // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
-        console.log(urlSong);
-        // console.log(trackList);
       }
     });
   }, []);
@@ -46,6 +51,11 @@ function App(props) {
           if (song.includes(" ")) {
             urlSong = song.replaceAll(" ", "%20");
           }
+          let urlGroup = band;
+          if (band.includes(" ")) {
+            urlGroup = band.replaceAll(" ", "%20");
+          }
+          let urlQuery = `${urlGroup}%20${urlSong}`;
           // let comment = document.getElementById("comment").value;
           axios
             .post(`/song/${band}/${song}`)
@@ -54,26 +64,30 @@ function App(props) {
               array.unshift({
                 group: band,
                 song: song,
-                query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&order=viewCount&q=${urlSong}&key=${API}`,
+                // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
             .then(setTrackList([...array]))
             .then(console.log(trackList));
+          // console.log(youtubeVideo);
+
           // .then(console.log(array[0].query));
         }}
       />
       <TrackList
         trackList={trackList}
+        youtubeVideo={youtubeVideo}
         onClick={(e) => {
-          console.log("Hello");
-          // for (const track of trackList) {
-          //   if (track.group + "-" + track.song === e.target.innerHTML) {
-          //     console.log(e.target.innerHTML);
-          //   }
-          // if (`${track.group} - ${track.song}` === e.target) {
-          //   console.log("e.target");
-          // }
-          // }
+          for (const track of trackList)
+            if (e.target.innerHTML === `${track.group} - ${track.song}`) {
+              return fetch(`${track.query}`)
+                .then((res) => res.json())
+                .then((response) =>
+                  setYoutubeVideo(
+                    `https://www.youtube.com/embed/${response.items[0].id.videoId}`
+                  )
+                );
+            }
         }}
       />
     </div>

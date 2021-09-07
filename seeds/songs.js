@@ -8,12 +8,12 @@ exports.seed = function (knex) {
         {
           band_name: "My Chemical Romance",
           song_name: "Teenagers",
-          comment: "Perfect for brooding.",
+          // comment: "Perfect for brooding.",
         },
         {
           band_name: "Nirvana",
           song_name: "Smells Like Teen Spirit",
-          comment: "I was born too late.",
+          // comment: "I was born too late.",
         },
         {
           band_name: "Avenged Sevenfold",
@@ -22,7 +22,7 @@ exports.seed = function (knex) {
         {
           band_name: "Skrillex",
           song_name: "Scary Monsters and Nice Sprites",
-          comment: "So deep",
+          // comment: "So deep",
         },
       ]);
     });
