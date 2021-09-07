@@ -37,7 +37,7 @@ function App(props) {
           group: track.band_name,
           song: track.song_name,
           id: track.id + 1,
-          // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
         console.log(trackList);
@@ -68,7 +68,7 @@ function App(props) {
               array.unshift({
                 group: band,
                 song: song,
-                // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+                query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
             .then(setTrackList([...array]))
@@ -86,8 +86,8 @@ function App(props) {
                   .then((res) => res.json())
                   // .then(console.log(track))
                   .then(
-                    (response) => setYoutubeVideo()
-                    // `https://www.youtube.com/embed/${response.items[0].id.videoId}`
+                    (response) =>
+                      setYoutubeVideo()`https://www.youtube.com/embed/${response.items[0].id.videoId}`
                   )
                   .then(
                     axios
