@@ -11,11 +11,16 @@ const {
     trackList,
 } = props
 
-let [video, setVideo] = useState(``);
+
 const listUpdater = () => {
             return props.trackList.map((track) => {
                     return (
-        <div>{`${track.group} - ${track.song}`}</div>
+        <div>{`${track.group} - ${track.song}`}
+        {/* <br/>
+        <div className="timeStamp">
+        {`Posted: ${track.postedAt}`}
+        </div> */}
+        </div>
        )
     })    
 }
@@ -24,7 +29,8 @@ const listUpdater = () => {
 return (
     <div >
         <div className={props.className}onClick={onClick}>  
-        <h1 onClick={()=>setVideo(`https://www.youtube.com/watch?v=1w7OgIMMRc4`)}>Recent Songs</h1>
+        <h1 >Recent Songs</h1>
+        <button onClick={()=> console.log(props.trackList[0].postedAt)}>Click Me</button>
         <div className="list">
         {listUpdater()}
             </div> 

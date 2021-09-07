@@ -5,8 +5,8 @@
   "scripts": {
     "migrate": "npx -r dotenv/config knex migrate:make init --migrations-directory ./migrations",
     "seed": "npx -r dotenv/config knex seed:make seed init --knexfile server/knexfile.js",
-    "serve": "node server",
-    "start": "react-scripts start",
+    "start": "node server",
+    "serve": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

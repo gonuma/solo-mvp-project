@@ -29,10 +29,12 @@ function App(props) {
           urlGroup = track.band_name.replaceAll(" ", "%20");
         }
         let urlQuery = `${urlGroup}%20${urlSong}`;
+
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+          // postedAt: track.created_at,
+          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
       }
@@ -55,22 +57,18 @@ function App(props) {
             urlGroup = band.replaceAll(" ", "%20");
           }
           let urlQuery = `${urlGroup}%20${urlSong}`;
-          // let comment = document.getElementById("comment").value;
+
           axios
             .post(`/song/${band}/${song}`)
-            .then((response) => console.log(response.data))
+            // .then((response) => console.log(response.data))
             .then(
               array.unshift({
                 group: band,
                 song: song,
-                // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+                query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
-            .then(setTrackList([...array]))
-            .then(console.log(trackList));
-          // console.log(youtubeVideo);
-
-          // .then(console.log(array[0].query));
+            .then(setTrackList([...array]));
         }}
       />
       <TrackList

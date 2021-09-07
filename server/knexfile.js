@@ -8,11 +8,11 @@ module.exports = {
       `postgres://${process.env.USER}@127.0.0.1:5432/musispace`,
     migration: {
       tableName: "migrations",
-      directory: "../migrations",
+      directory: (__dirname, "..", "migrations"),
     },
     searchPath: "public",
     seeds: {
-      directory: "../solo-mvp-project/seeds",
+      directory: (__dirname, "..", "seeds"),
     },
     searchPath: "public",
   },

@@ -41,6 +41,10 @@ body {
   /* background-color: blue; */
 }
 
+.timeStamp {
+  font-size: small;
+}
+
 .Player {
   margin-left: auto;
   display: inline-block;
@@ -60,6 +64,7 @@ Input {
   height: 45px;
   width: 200px;
   margin-left: 5px;
+  font-size: large;
 }
 Input::placeholder {
   font-size: large;
