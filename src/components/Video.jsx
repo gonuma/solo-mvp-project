@@ -8,8 +8,10 @@ export default function Video(props) {
 let {youtubeVideo, className} = props
     
     return (
-        <div className={props.className}>
-            <iframe width="100%" height="315" src={youtubeVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div className="Tracks">
+            {/* <div className="Player"> */}
+            <iframe width="750px" height="100%" src={youtubeVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {/* </div> */}
         </div>
     )
 

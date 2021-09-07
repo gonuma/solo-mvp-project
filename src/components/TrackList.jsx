@@ -22,10 +22,12 @@ const listUpdater = () => {
 
 
 return (
-    <div > 
+    <div >
         <div className={props.className}onClick={onClick}>  
         <h1 onClick={()=>setVideo(`https://www.youtube.com/watch?v=1w7OgIMMRc4`)}>Recent Songs</h1>
+        <div className="list">
         {listUpdater()}
+            </div> 
         </div>
         <Video youtubeVideo={youtubeVideo}/>
     </div>

@@ -41,7 +41,6 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1>musispace</h1>
       <Users
         onClick={(e) => {
           const array = trackList;

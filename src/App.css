@@ -13,22 +13,41 @@ body {
   min-height: 100vh;
 }
 
+.header {
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(150, 150, 150, 0.9);
+}
+
 .Tracks {
-  text-align: left;
+  margin: auto;
+  text-align: center;
   font-weight: bold;
-  padding-right: 100px;
-  height: 500px;
-  max-width: 400px;
+  padding-right: 20vw;
+  height: 60vh;
   display: inline-block;
+  max-width: 20vw;
+  margin-top: 10vh;
   font-size: large;
   vertical-align: middle;
+  background-color: rgba(150, 150, 150, 0.9);
+}
+.list {
+  line-height: 2;
+  text-align: left;
+  overflow-y: scroll;
+  max-height: 400px;
+  max-width: 100%;
+  /* background-color: blue; */
 }
 
 .Player {
   margin-left: auto;
   display: inline-block;
-  max-width: 50%;
+  max-width: 100%;
   margin-top: 50px;
+  vertical-align: middle;
+  background-color: blue;
 }
 
 Button {

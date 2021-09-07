@@ -6,12 +6,11 @@ const {
 } = props
 
 return (
-    <div> 
-        <button type="submit" onClick={onClick}
->
-    Add Song</button>
-    <input id="groupInput" placeholder="Group Name"></input>
-    <input id="songInput" placeholder="Song Name"></input>
+    <div className="header"> 
+        <h1>musispace</h1>
+        <button type="submit" onClick={onClick}>Add Song</button>
+        <input id="groupInput" placeholder="Group Name"></input>
+        <input id="songInput" placeholder="Song Name"></input>
     </div>
 )
 }
