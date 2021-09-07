@@ -14,8 +14,6 @@ exports.up = function (knex) {
       table.string("song_name").notNullable();
 
       table.timestamp("created_at").defaultTo(knex.fn.now());
-
-      table.string("comment");
     }),
 
     knex.schema.createTable("comments", (table) => {

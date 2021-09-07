@@ -16,6 +16,30 @@ app.get("/users", async (req, res) => {
   }
 });
 
+app.get("/comments", async (req, res) => {
+  if (req.query.id) {
+    try {
+      const comments = await db
+        .select("*")
+        .from("comments")
+        .where("song_id", "=", req.query.id);
+      res.json(comments);
+    } catch (err) {
+      console.error("Error loading comments");
+      res.sendStatus(500);
+    }
+  }
+  if (!req.query.id) {
+    try {
+      const comments = await db.select().table("comments");
+      res.json(comments);
+    } catch (err) {
+      console.error("Error loading comments");
+      res.sendStatus(500);
+    }
+  }
+});
+
 app.get("/songs", async (req, res) => {
   try {
     const songs = await db.select().table("songs");

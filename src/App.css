@@ -19,6 +19,12 @@ body {
   background-color: rgba(150, 150, 150, 0.9);
 }
 
+.header Button {
+  height: 35px;
+  width: 125px;
+  font-size: large;
+}
+
 .Tracks {
   margin: auto;
   text-align: center;
@@ -35,10 +41,17 @@ body {
 .list {
   line-height: 2;
   text-align: left;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   max-height: 400px;
   max-width: 100%;
   /* background-color: blue; */
+}
+
+.track {
+  font-size: small;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 5px;
 }
 .track:hover {
   cursor: pointer;
@@ -57,12 +70,18 @@ body {
   vertical-align: middle;
   background-color: blue;
 }
-
-Button {
-  height: 35px;
-  width: 125px;
-  font-size: large;
+.commentInput {
+  font-size: medium;
+  width: auto;
+  margin-right: 5px;
 }
+
+.comments {
+  background-color: rgba(150, 150, 150, 0.9);
+}
+
+/* Button {
+} */
 
 Input {
   height: 45px;

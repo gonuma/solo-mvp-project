@@ -3,10 +3,13 @@ import react, { useState, useEffect } from "react";
 import axios from "axios";
 import Users from "./components/Users";
 import TrackList from "./components/TrackList";
+import Comments from "./components/Comments";
 
 function App(props) {
   const { onClick } = props;
 
+  const [selectedVidId, setVidId] = useState("");
+  const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
   const [youtubeVideo, setYoutubeVideo] = useState(
     "https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -33,7 +36,8 @@ function App(props) {
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+          id: track.id + 1,
+          // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
         console.log(trackList);
@@ -57,7 +61,6 @@ function App(props) {
             urlGroup = band.replaceAll(" ", "%20");
           }
           let urlQuery = `${urlGroup}%20${urlSong}`;
-
           axios
             .post(`/song/${band}/${song}`)
             // .then((response) => console.log(response.data))
@@ -65,10 +68,11 @@ function App(props) {
               array.unshift({
                 group: band,
                 song: song,
-                query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+                // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
-            .then(setTrackList([...array]));
+            .then(setTrackList([...array]))
+            .then(console.log(array[1].id));
         }}
       />
       <TrackList
@@ -77,16 +81,25 @@ function App(props) {
         onClick={(e) => {
           for (const track of trackList)
             if (e.target.innerHTML === `${track.group} - ${track.song}`) {
-              return fetch(`${track.query}`)
-                .then((res) => res.json())
-                .then((response) =>
-                  setYoutubeVideo(
-                    `https://www.youtube.com/embed/${response.items[0].id.videoId}`
+              return (
+                fetch(`${track.query}`)
+                  .then((res) => res.json())
+                  // .then(console.log(track))
+                  .then(
+                    (response) => setYoutubeVideo()
+                    // `https://www.youtube.com/embed/${response.items[0].id.videoId}`
                   )
-                );
+                  .then(
+                    axios
+                      .get(`/comments?id=${track.id}`)
+                      .then((res) => setComments(res.data))
+                  )
+                // .then(setVidId(track.id))
+              );
             }
         }}
       />
+      <Comments comments={comments} />
     </div>
   );
 }

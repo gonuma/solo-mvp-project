@@ -15,7 +15,9 @@ const {
 const listUpdater = () => {
             return props.trackList.map((track) => {
                     return (
-        <div className="track">{`${track.group} - ${track.song}`}
+                        <div>
+        {/* <div className="track">{`${track.group} - ${track.song}`} */}
+        <button className="track">{`${track.group} - ${track.song}`}</button>
         {/* <br/>
         <div className="timeStamp">
         {`Posted: ${track.postedAt}`}
@@ -30,7 +32,7 @@ return (
     <div >
         <div className={props.className}onClick={onClick}>  
         <h1 >Recent Songs</h1>
-        <button onClick={()=> console.log(props.trackList)}>Click Me</button>
+        {/* <button onClick={()=> console.log(props.trackList)}>Click Me</button> */}
         <div className="list">
         {listUpdater()}
             </div> 
