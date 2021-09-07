@@ -40,6 +40,10 @@ body {
   max-width: 100%;
   /* background-color: blue; */
 }
+.track:hover {
+  cursor: pointer;
+  background-color: #ed008d;
+}
 
 .timeStamp {
   font-size: small;
@@ -64,7 +68,9 @@ Input {
   height: 45px;
   width: 200px;
   margin-left: 5px;
+  margin-bottom: 5px;
   font-size: large;
+  text-align: left;
 }
 Input::placeholder {
   font-size: large;

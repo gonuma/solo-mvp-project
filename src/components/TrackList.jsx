@@ -15,7 +15,7 @@ const {
 const listUpdater = () => {
             return props.trackList.map((track) => {
                     return (
-        <div>{`${track.group} - ${track.song}`}
+        <div className="track">{`${track.group} - ${track.song}`}
         {/* <br/>
         <div className="timeStamp">
         {`Posted: ${track.postedAt}`}
