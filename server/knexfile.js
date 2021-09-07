@@ -1,5 +1,4 @@
 require("dotenv").config({ path: "../.env" });
-console.log(process.env.directory);
 
 module.exports = {
   development: {
@@ -13,7 +12,7 @@ module.exports = {
     },
     searchPath: "public",
     seeds: {
-      directory: "../solo-mvp/seeds",
+      directory: "../solo-mvp-project/seeds",
     },
     searchPath: "public",
   },
