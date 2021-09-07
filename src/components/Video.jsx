@@ -1,6 +1,8 @@
 import React from 'react'
 
 
+// const API = "AIzaSyDTlAN8Wbd6CyQKeGJs6S8UY3eOZbSJlj8";
+// const resultLimit = 1;
 
 export default function Video(props) {
 let {youtubeVideo, className} = props

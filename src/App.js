@@ -12,7 +12,7 @@ function App(props) {
     "https://www.youtube.com/embed/dQw4w9WgXcQ"
   );
 
-  const API = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
+  const API = "AIzaSyDTlAN8Wbd6CyQKeGJs6S8UY3eOZbSJlj8";
   const resultLimit = 1;
 
   let temp = [];
@@ -33,10 +33,10 @@ function App(props) {
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          // postedAt: track.created_at,
           query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
+        console.log(trackList);
       }
     });
   }, []);

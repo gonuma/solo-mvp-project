@@ -30,7 +30,7 @@ return (
     <div >
         <div className={props.className}onClick={onClick}>  
         <h1 >Recent Songs</h1>
-        <button onClick={()=> console.log(props.trackList[0].postedAt)}>Click Me</button>
+        <button onClick={()=> console.log(props.trackList)}>Click Me</button>
         <div className="list">
         {listUpdater()}
             </div> 
