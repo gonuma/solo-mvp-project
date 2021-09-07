@@ -23,7 +23,7 @@ const listUpdater = () => {
 
 return (
     <div > 
-        <div className={props.className}onClick={()=>console.log("Nice")}>  
+        <div className={props.className}onClick={onClick}>  
         <h1 onClick={()=>setVideo(`https://www.youtube.com/watch?v=1w7OgIMMRc4`)}>Recent Songs</h1>
         {listUpdater()}
         </div>
@@ -34,6 +34,7 @@ return (
 
 TrackList.defaultProps = {
     className: "Tracks",
+    onClick: () => {}
 }
 
 export default TrackList;

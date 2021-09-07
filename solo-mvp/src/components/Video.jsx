@@ -1,5 +1,9 @@
 import React from 'react'
 
+const API = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
+const result = 1;
+
+
 export default function Video(props) {
 let {video, className} = props
     

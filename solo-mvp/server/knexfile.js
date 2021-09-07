@@ -1,4 +1,5 @@
 require("dotenv").config({ path: "../.env" });
+console.log(process.env.directory);
 
 module.exports = {
   development: {
@@ -8,7 +9,7 @@ module.exports = {
       `postgres://${process.env.USER}@127.0.0.1:5432/spotistats`,
     migration: {
       tableName: "migrations",
-      directory: "../solo-mvp/migrations",
+      directory: "../migrations",
     },
     searchPath: "public",
     seeds: {
