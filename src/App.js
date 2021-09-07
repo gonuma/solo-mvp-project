@@ -85,9 +85,10 @@ function App(props) {
                 fetch(`${track.query}`)
                   .then((res) => res.json())
                   // .then(console.log(track))
-                  .then(
-                    (response) =>
-                      setYoutubeVideo()`https://www.youtube.com/embed/${response.items[0].id.videoId}`
+                  .then((response) =>
+                    setYoutubeVideo(
+                      `https://www.youtube.com/embed/${response.items[0].id.videoId}`
+                    )
                   )
                   .then(
                     axios
