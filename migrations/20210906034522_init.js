@@ -11,7 +11,7 @@ exports.up = function (knex) {
 
       table.string("band_name").notNullable();
 
-      table.string("song_name").notNullable().unique();
+      table.string("song_name", { primaryKey: true }).notNullable().unique();
 
       table.timestamp("created_at").defaultTo(knex.fn.now());
     }),
