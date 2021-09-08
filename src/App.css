@@ -2,133 +2,296 @@
   font-family: "Lobster", cursive;
   src: url(https://fonts.google.com/specimen/Lobster);
 }
+@media screen and (min-width: 1000px) {
+  body {
+    background-image: url("https://content.pimp-my-profile.com/ms/i33/5/11/5/f_4f6e2319f0.png");
+    color: #e5e5e5;
+  }
 
-body {
-  background-image: url("https://content.pimp-my-profile.com/ms/i33/5/11/5/f_4f6e2319f0.png");
-  color: #e5e5e5;
-}
+  .App {
+    text-align: center;
+    min-height: 100vh;
+  }
 
-.App {
-  text-align: center;
-  min-height: 100vh;
-}
+  .header {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(150, 150, 150, 0.9);
+  }
 
-.header {
-  max-width: 1000px;
-  margin: auto;
-  background-color: rgba(150, 150, 150, 0.9);
-}
+  .header Button {
+    height: 35px;
+    width: 125px;
+    font-size: large;
+  }
 
-.header Button {
-  height: 35px;
-  width: 125px;
-  font-size: large;
-}
+  .Tracks {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    padding-right: 20vw;
+    height: 60vh;
+    display: inline-block;
+    max-width: 20vw;
+    margin-top: 10vh;
+    font-size: large;
+    vertical-align: middle;
+    background-color: rgba(150, 150, 150, 0.9);
+  }
+  .list {
+    line-height: 2;
+    text-align: left;
+    /* overflow-y: scroll; */
+    max-height: 400px;
+    max-width: 100%;
+  }
 
-.Tracks {
-  margin: auto;
-  text-align: center;
-  font-weight: bold;
-  padding-right: 20vw;
-  height: 60vh;
-  display: inline-block;
-  max-width: 20vw;
-  margin-top: 10vh;
-  font-size: large;
-  vertical-align: middle;
-  background-color: rgba(150, 150, 150, 0.9);
-}
-.list {
-  line-height: 2;
-  text-align: left;
-  /* overflow-y: scroll; */
-  max-height: 400px;
-  max-width: 100%;
-}
+  .track {
+    font-size: small;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  .track:hover {
+    cursor: pointer;
+    background-color: #ed008d;
+  }
 
-.track {
-  font-size: small;
-  width: 300px;
-  height: 50px;
-  margin-bottom: 5px;
-}
-.track:hover {
-  cursor: pointer;
-  background-color: #ed008d;
-}
+  .timeStamp {
+    font-size: small;
+  }
 
-.timeStamp {
-  font-size: small;
-}
+  .Player {
+    display: inline-block;
+    max-width: 750px;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  .commentInput {
+    font-size: medium;
+    width: auto;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
 
-.Player {
-  margin-left: auto;
-  display: inline-block;
-  max-width: 100%;
-  margin-top: 50px;
-  vertical-align: middle;
-  background-color: blue;
-}
-.commentInput {
-  font-size: medium;
-  width: auto;
-  margin-right: 5px;
-}
+  .comments {
+    margin: auto;
+    display: block;
+    background-color: rgba(150, 150, 150, 0.9);
+    height: 150px;
+    width: 800px;
+    text-align: left;
+    line-height: 1.5;
+    overflow-y: scroll;
+  }
 
-.comments {
-  margin: auto;
-  display: block;
-  background-color: rgba(150, 150, 150, 0.9);
-  height: 150px;
-  width: 500px;
-  text-align: left;
-  line-height: 1.5;
-  overflow-y: scroll;
-}
-
-Input {
-  height: 45px;
-  width: 200px;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  font-size: large;
-  text-align: left;
-}
-Input::placeholder {
-  font-size: large;
-}
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  Input {
+    height: 45px;
+    width: 200px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+    text-align: left;
+  }
+  Input::placeholder {
+    font-size: large;
   }
 }
 
-.App-header {
-  background-color: black;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (min-width: 500px) and (max-width: 999px) {
+  body {
+    background-image: url("https://content.pimp-my-profile.com/ms/i33/5/11/5/f_4f6e2319f0.png");
+    color: #e5e5e5;
+  }
+
+  .App {
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .header {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(150, 150, 150, 0.9);
+  }
+
+  .header Button {
+    height: 35px;
+    width: 125px;
+    font-size: large;
+  }
+
+  .Tracks {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    padding-right: 20vw;
+    height: 60vh;
+    display: inline-block;
+    max-width: 20vw;
+    margin-top: 10vh;
+    font-size: large;
+    vertical-align: middle;
+    background-color: rgba(150, 150, 150, 0.9);
+  }
+  .list {
+    line-height: 2;
+    text-align: left;
+    /* overflow-y: scroll; */
+    max-height: 400px;
+    max-width: 100%;
+  }
+
+  .track {
+    font-size: small;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  .track:hover {
+    cursor: pointer;
+    background-color: #ed008d;
+  }
+
+  .timeStamp {
+    font-size: small;
+  }
+
+  .Player {
+    margin-left: auto;
+    display: inline-block;
+    max-width: 250px;
+    max-height: 50%;
+    margin-top: 100px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .commentInput {
+    font-size: medium;
+    width: auto;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .comments {
+    margin: auto;
+    display: block;
+    background-color: rgba(150, 150, 150, 0.9);
+    height: 150px;
+    width: 500px;
+    text-align: left;
+    line-height: 1.5;
+    overflow-y: scroll;
+  }
+
+  Input {
+    height: 45px;
+    width: 200px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+    text-align: left;
+  }
+  Input::placeholder {
+    font-size: large;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 499px) {
+  body {
+    background-image: url("https://content.pimp-my-profile.com/ms/i33/5/11/5/f_4f6e2319f0.png");
+    color: #e5e5e5;
+  }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .App {
+    text-align: center;
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(150, 150, 150, 0.9);
   }
-} */
+
+  .header Button {
+    height: 35px;
+    width: 125px;
+    font-size: large;
+  }
+
+  .Tracks {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    padding-right: 20vw;
+    height: 60vh;
+    display: inline-block;
+    max-width: 20vw;
+    margin-top: 10vh;
+    font-size: large;
+    vertical-align: middle;
+    background-color: rgba(150, 150, 150, 0.9);
+  }
+  .list {
+    line-height: 2;
+    text-align: left;
+    /* overflow-y: scroll; */
+    max-height: 400px;
+    max-width: 100%;
+    overflow-y: scroll;
+  }
+
+  .track {
+    font-size: small;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  .track:hover {
+    cursor: pointer;
+    background-color: #ed008d;
+  }
+
+  .timeStamp {
+    font-size: small;
+  }
+
+  .Player {
+    margin-left: auto;
+    display: inline-block;
+    max-width: 200px;
+    max-height: 50%;
+    margin-top: 100px;
+    vertical-align: middle;
+  }
+  .commentInput {
+    font-size: medium;
+    width: auto;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+
+  .comments {
+    margin: auto;
+    display: block;
+    background-color: rgba(150, 150, 150, 0.9);
+    height: 150px;
+    width: 500px;
+    text-align: left;
+    line-height: 1.5;
+    overflow-y: scroll;
+  }
+
+  Input {
+    height: 45px;
+    width: 200px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: large;
+    text-align: left;
+  }
+  Input::placeholder {
+    font-size: large;
+  }
+}
