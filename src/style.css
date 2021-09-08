@@ -19,7 +19,7 @@
   }
 
   .header {
-    max-width: 1000px;
+    max-width: 90vw;
     margin: auto;
     background-color: rgba(150, 150, 150, 0.9);
   }
@@ -37,8 +37,8 @@
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
-    max-width: 20vw;
-    margin-top: 10vh;
+    max-width: 25vw;
+    margin-top: 3vh;
     font-size: large;
     vertical-align: middle;
     border: 3px #ed008d;
@@ -127,7 +127,7 @@
   }
 
   .header {
-    max-width: 1000px;
+    max-width: 90vw;
     margin: auto;
     background-color: rgba(150, 150, 150, 0.9);
   }
@@ -145,8 +145,8 @@
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
-    max-width: 20vw;
-    margin-top: 10vh;
+    max-width: 25vw;
+    margin-top: 3vh;
     font-size: large;
     vertical-align: middle;
     background-color: rgba(150, 150, 150, 0.9);
@@ -234,7 +234,7 @@
   }
 
   .header {
-    max-width: 1000px;
+    max-width: 90vw;
     margin: auto;
     background-color: rgba(150, 150, 150, 0.9);
   }
@@ -252,8 +252,8 @@
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
-    max-width: 20vw;
-    margin-top: 10vh;
+    max-width: 25vw;
+    margin-top: 3vh;
     font-size: large;
     vertical-align: middle;
     background-color: rgba(150, 150, 150, 0.9);
