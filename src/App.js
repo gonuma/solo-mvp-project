@@ -3,11 +3,11 @@ import react, { useState, useEffect } from "react";
 import axios from "axios";
 import Users from "./components/Users";
 import TrackList from "./components/TrackList";
-import Comments from "./components/Comments";
+// import Comments from "./components/Comments";
 
 function App(props) {
   const [selectedVid, setSelectedVid] = useState("Default");
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
   const [youtubeVideo, setYoutubeVideo] = useState(
     "https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -105,17 +105,17 @@ function App(props) {
                       `https://www.youtube.com/embed/${response.items[0].id.videoId}`
                     )
                   )
-                  .then(setSelectedVid(track.song))
-                  .then(
-                    axios
-                      .get(`/comments/${track.song}`)
-                      .then((res) => setComments(res.data))
-                  )
+                // .then(setSelectedVid(track.song))
+                // .then(
+                //   axios
+                //     .get(`/comments/${track.song}`)
+                //     .then((res) => setComments(res.data))
+                // )
               );
             }
         }}
       />
-      <Comments selectedVid={selectedVid} comments={comments} />
+      {/* <Comments selectedVid={selectedVid} comments={comments} /> */}
     </div>
   );
 }
