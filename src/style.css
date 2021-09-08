@@ -73,9 +73,10 @@
 
   .Player {
     display: inline-block;
-    margin-top: 200px;
-    margin-left: 10vw;
-    width: inherit;
+    margin-top: 10vh;
+    margin-left: 2.5vw;
+    width: 35vw;
+    height: 35vh;
     vertical-align: middle;
   }
   .commentInput {
@@ -179,9 +180,10 @@
 
   .Player {
     display: inline-block;
-    margin-top: 200px;
-    margin-left: 2vw;
+    margin-top: 10vh;
+    margin-left: 2.5vw;
     width: 35vw;
+    height: 35vh;
     vertical-align: middle;
   }
   .commentInput {
@@ -284,9 +286,10 @@
 
   .Player {
     display: inline-block;
-    margin-top: 200px;
-    margin-left: 2vw;
+    margin-top: 10vh;
+    margin-left: 2.5vw;
     width: 35vw;
+    height: 35vh;
     vertical-align: middle;
   }
   .commentInput {
