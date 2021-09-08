@@ -34,7 +34,7 @@ function App(props) {
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
         console.log(trackList);
@@ -69,6 +69,8 @@ function App(props) {
           let band = document.getElementById("groupInput").value;
           let song = document.getElementById("songInput").value;
           let urlSong = song;
+          document.getElementById("groupInput").value = null;
+          document.getElementById("songInput").value = null;
 
           if (song.includes(" ")) {
             urlSong = song.replaceAll(" ", "%20");
@@ -84,7 +86,7 @@ function App(props) {
               array.unshift({
                 group: band,
                 song: song,
-                // query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+                query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
             .then(setTrackList([...array]));
