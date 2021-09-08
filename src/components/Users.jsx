@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 const Users = (props) => {
 const {
     onClick,

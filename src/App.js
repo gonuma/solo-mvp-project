@@ -1,11 +1,11 @@
 import "./App.css";
-import react, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Users from "./components/Users";
 import TrackList from "./components/TrackList";
-// import Comments from "./components/Comments";
+import Comments from "./components/Comments";
 
-function App(props) {
+function App() {
   const [selectedVid, setSelectedVid] = useState("Default");
   // const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
@@ -115,7 +115,10 @@ function App(props) {
             }
         }}
       />
-      {/* <Comments selectedVid={selectedVid} comments={comments} /> */}
+      <Comments
+        selectedVid={selectedVid}
+        // comments={comments}
+      />
     </div>
   );
 }
