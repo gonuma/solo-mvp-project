@@ -41,9 +41,10 @@
   .list {
     line-height: 2;
     text-align: left;
-    /* overflow-y: scroll; */
     max-height: 400px;
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 500px;
+    overflow-y: scroll;
   }
 
   .track {
@@ -137,9 +138,9 @@
   .list {
     line-height: 2;
     text-align: left;
-    /* overflow-y: scroll; */
     max-height: 400px;
-    max-width: 100%;
+    width: 275px;
+    overflow-y: scroll;
   }
 
   .track {
@@ -162,7 +163,7 @@
     display: inline-block;
     max-width: 250px;
     max-height: 50%;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-left: 10px;
     vertical-align: middle;
   }
