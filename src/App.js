@@ -6,9 +6,7 @@ import TrackList from "./components/TrackList";
 import Comments from "./components/Comments";
 
 function App(props) {
-  const { onClick } = props;
-
-  const [selectedVidId, setVidId] = useState("");
+  const [selectedVid, setSelectedVid] = useState("Default");
   const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
   const [youtubeVideo, setYoutubeVideo] = useState(
@@ -36,7 +34,6 @@ function App(props) {
         trackList.unshift({
           group: track.band_name,
           song: track.song_name,
-          id: track.id + 1,
           query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
         });
         setTrackList([...temp]);
@@ -48,11 +45,31 @@ function App(props) {
   return (
     <div className="App">
       <Users
+        deleteEntry={() => {
+          let band = document.getElementById("groupInput").value;
+          let song = document.getElementById("songInput").value;
+          if (band === "deletesong") {
+            axios
+              .delete(`/songs/${song}`)
+              .then(() => {
+                return console.log("Song deleted!");
+              })
+              .then(() => {
+                for (let i = 0; i < trackList.length; i++) {
+                  if (trackList[i].song === song) {
+                    let tempArray = trackList.splice(i, 1);
+                    setTrackList([...trackList]);
+                  }
+                }
+              });
+          }
+        }}
         onClick={(e) => {
           const array = trackList;
           let band = document.getElementById("groupInput").value;
           let song = document.getElementById("songInput").value;
           let urlSong = song;
+
           if (song.includes(" ")) {
             urlSong = song.replaceAll(" ", "%20");
           }
@@ -63,7 +80,6 @@ function App(props) {
           let urlQuery = `${urlGroup}%20${urlSong}`;
           axios
             .post(`/song/${band}/${song}`)
-            // .then((response) => console.log(response.data))
             .then(
               array.unshift({
                 group: band,
@@ -71,8 +87,7 @@ function App(props) {
                 query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
               })
             )
-            .then(setTrackList([...array]))
-            .then(console.log(array[1].id));
+            .then(setTrackList([...array]));
         }}
       />
       <TrackList
@@ -90,17 +105,17 @@ function App(props) {
                       `https://www.youtube.com/embed/${response.items[0].id.videoId}`
                     )
                   )
+                  .then(setSelectedVid(track.song))
                   .then(
                     axios
-                      .get(`/comments?id=${track.id}`)
+                      .get(`/comments/${track.song}`)
                       .then((res) => setComments(res.data))
                   )
-                // .then(setVidId(track.id))
               );
             }
         }}
       />
-      <Comments comments={comments} />
+      <Comments selectedVid={selectedVid} comments={comments} />
     </div>
   );
 }

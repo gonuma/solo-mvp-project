@@ -6,19 +6,19 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex("comments").insert([
         {
-          song_id: 1,
+          song_name: "Smells Like Teen Spirit",
           comment: "first",
         },
         {
-          song_id: 2,
+          song_name: "Bat Country",
           comment: "This song stinks",
         },
         {
-          song_id: 2,
+          song_name: "Smells Like Teen Spirit",
           comment: "I love this song",
         },
         {
-          song_id: 3,
+          song_name: "Teenagers",
           comment: "Nice",
         },
       ]);

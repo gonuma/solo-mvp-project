@@ -16,22 +16,21 @@ app.get("/users", async (req, res) => {
   }
 });
 
-app.get("/comments", async (req, res) => {
-  if (req.query.id) {
+app.get("/comments/:song", async (req, res) => {
+  if (req.params.song) {
     try {
-      const comments = await db
-        .select("*")
-        .from("comments")
-        .where("song_id", "=", req.query.id);
+      const comments = await db("comments")
+        .select("comment")
+        .where("song_name", "=", req.params.song);
       res.json(comments);
     } catch (err) {
       console.error("Error loading comments");
       res.sendStatus(500);
     }
   }
-  if (!req.query.id) {
+  if (!req.params.song) {
     try {
-      const comments = await db.select().table("comments");
+      const comments = await db("comments").select("comment");
       res.json(comments);
     } catch (err) {
       console.error("Error loading comments");
@@ -60,6 +59,29 @@ app.post("/song/:band/:song", async (req, res) => {
     res.send("Nice choice!");
   } catch (err) {
     console.error("Error adding song", err);
+    res.sendStatus(500);
+  }
+});
+
+app.post("/comments/:song/:comment", async (req, res) => {
+  try {
+    await db("comments").insert({
+      song_name: req.params.song,
+      comment: req.params.comment,
+    });
+    res.send("Comment submitted!");
+  } catch (err) {
+    console.error("Error adding comment!", err);
+    res.sendStatus(500);
+  }
+});
+
+app.delete("/songs/:song", async (req, res) => {
+  try {
+    await db("songs").del().where("song_name", "=", req.params.song);
+    res.send(`${req.params.song} deleted`);
+  } catch (err) {
+    console.error("Song not found!", err);
     res.sendStatus(500);
   }
 });

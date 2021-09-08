@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Video from "./Video"
 
 
@@ -16,12 +14,7 @@ const listUpdater = () => {
             return props.trackList.map((track) => {
                     return (
                         <div>
-        {/* <div className="track">{`${track.group} - ${track.song}`} */}
         <button className="track">{`${track.group} - ${track.song}`}</button>
-        {/* <br/>
-        <div className="timeStamp">
-        {`Posted: ${track.postedAt}`}
-        </div> */}
         </div>
        )
     })    
@@ -32,7 +25,6 @@ return (
     <div >
         <div className={props.className}onClick={onClick}>  
         <h1 >Recent Songs</h1>
-        {/* <button onClick={()=> console.log(props.trackList)}>Click Me</button> */}
         <div className="list">
         {listUpdater()}
             </div> 

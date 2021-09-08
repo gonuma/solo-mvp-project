@@ -44,7 +44,6 @@ body {
   /* overflow-y: scroll; */
   max-height: 400px;
   max-width: 100%;
-  /* background-color: blue; */
 }
 
 .track {
@@ -77,11 +76,15 @@ body {
 }
 
 .comments {
+  margin: auto;
+  display: block;
   background-color: rgba(150, 150, 150, 0.9);
+  height: 150px;
+  width: 500px;
+  text-align: left;
+  line-height: 1.5;
+  overflow-y: scroll;
 }
-
-/* Button {
-} */
 
 Input {
   height: 45px;

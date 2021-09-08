@@ -11,7 +11,7 @@ exports.up = function (knex) {
 
       table.string("band_name").notNullable();
 
-      table.string("song_name").notNullable();
+      table.string("song_name").notNullable().unique();
 
       table.timestamp("created_at").defaultTo(knex.fn.now());
     }),
@@ -19,7 +19,10 @@ exports.up = function (knex) {
     knex.schema.createTable("comments", (table) => {
       table.increments("id", { primaryKey: true });
 
-      table.integer("song_id").references("songs.id").onDelete("CASCADE");
+      table
+        .string("song_name")
+        .references("songs.song_name")
+        .onDelete("CASCADE");
 
       table.string("comment");
     }),
