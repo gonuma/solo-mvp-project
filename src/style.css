@@ -8,6 +8,11 @@
     color: #e5e5e5;
   }
 
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
   .App {
     text-align: center;
     min-height: 100vh;
@@ -36,22 +41,26 @@
     margin-top: 10vh;
     font-size: large;
     vertical-align: middle;
+    border: 3px #ed008d;
+    border-style: solid;
     background-color: rgba(150, 150, 150, 0.9);
   }
   .list {
     line-height: 2;
     text-align: left;
     max-height: 400px;
-    /* max-width: 100%; */
-    width: 500px;
+    width: 37vw;
     overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 5px;
   }
 
   .track {
     font-size: small;
-    width: 300px;
+    width: 35vw;
     height: 50px;
     margin-bottom: 5px;
+    margin-right: 5px;
   }
   .track:hover {
     cursor: pointer;
@@ -64,8 +73,9 @@
 
   .Player {
     display: inline-block;
-    max-width: 750px;
-    max-height: 100%;
+    margin-top: 200px;
+    margin-left: 10vw;
+    width: inherit;
     vertical-align: middle;
   }
   .commentInput {
@@ -110,6 +120,11 @@
     min-height: 100vh;
   }
 
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
   .header {
     max-width: 1000px;
     margin: auto;
@@ -134,18 +149,22 @@
     font-size: large;
     vertical-align: middle;
     background-color: rgba(150, 150, 150, 0.9);
+    border: 3px #ed008d;
+    border-style: solid;
   }
   .list {
     line-height: 2;
     text-align: left;
     max-height: 400px;
-    width: 275px;
-    overflow-y: scroll;
+    width: 37vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-left: 5px;
   }
 
   .track {
     font-size: small;
-    width: 300px;
+    width: 35vw;
     height: 50px;
     margin-bottom: 5px;
   }
@@ -159,12 +178,10 @@
   }
 
   .Player {
-    margin-left: auto;
     display: inline-block;
-    max-width: 250px;
-    max-height: 50%;
-    margin-top: 150px;
-    margin-left: 10px;
+    margin-top: 200px;
+    margin-left: 2vw;
+    width: 35vw;
     vertical-align: middle;
   }
   .commentInput {
@@ -209,6 +226,11 @@
     min-height: 100vh;
   }
 
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+
   .header {
     max-width: 1000px;
     margin: auto;
@@ -233,19 +255,21 @@
     font-size: large;
     vertical-align: middle;
     background-color: rgba(150, 150, 150, 0.9);
+    border: 3px #ed008d;
+    border-style: solid;
   }
   .list {
     line-height: 2;
     text-align: left;
-    /* overflow-y: scroll; */
-    max-height: 400px;
+    max-height: 37vw;
     max-width: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .track {
     font-size: small;
-    width: 300px;
+    width: 35vw;
     height: 50px;
     margin-bottom: 5px;
   }
@@ -259,11 +283,10 @@
   }
 
   .Player {
-    margin-left: auto;
     display: inline-block;
-    max-width: 200px;
-    max-height: 50%;
-    margin-top: 100px;
+    margin-top: 200px;
+    margin-left: 2vw;
+    width: 35vw;
     vertical-align: middle;
   }
   .commentInput {
