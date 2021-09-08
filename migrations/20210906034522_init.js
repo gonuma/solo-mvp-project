@@ -18,12 +18,7 @@ exports.up = async function (knex) {
   await knex.schema.createTable("comments", (table) => {
     table.increments("id", { primaryKey: true });
 
-    table.string("song_name", { deferrable: "deferred" });
-
-    table
-      .foreign("song_name")
-      .references("songs.song_name")
-      .onDelete("CASCADE");
+    table.string("song_name");
 
     table.string("comment");
   });
