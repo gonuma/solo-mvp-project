@@ -24,7 +24,7 @@ const listUpdater = () => {
 return (
     <div >
         <div className={props.className}onClick={onClick}>  
-        <h1 >Recent Songs</h1>
+        <h1 className="trackTitle">Recent Songs</h1>
         <div className="list">
         {listUpdater()}
             </div> 

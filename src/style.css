@@ -27,6 +27,14 @@
     border-style: solid;
   }
 
+  .trackTitle {
+    margin-right: -20vw;
+    font-size: large;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
   h2 {
     margin-bottom: 1vh;
     margin-top: -3vh;
@@ -40,13 +48,11 @@
 
   .Tracks {
     margin: auto;
-    text-align: center;
-    font-weight: bold;
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
     max-width: 25vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
     font-size: large;
     vertical-align: middle;
     border: 3px #ed008d;
@@ -55,9 +61,8 @@
   }
   .list {
     line-height: 2;
-    text-align: left;
-    max-height: 400px;
-    width: 37vw;
+    max-height: 50vh;
+    width: 43vw;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-left: 5px;
@@ -66,10 +71,10 @@
   .track {
     font-size: small;
     width: 35vw;
-    height: 50px;
-    margin-bottom: 5px;
-    margin-right: 5px;
+    height: 4vh;
+    margin-bottom: 8px;
   }
+
   .track:hover {
     cursor: pointer;
     background-color: #ed008d;
@@ -82,7 +87,7 @@
   .Player {
     display: inline-block;
     margin-top: 10vh;
-    margin-left: 2.5vw;
+    margin-left: 5vw;
     width: 35vw;
     height: 35vh;
     vertical-align: middle;
@@ -146,6 +151,14 @@
     border-style: solid;
   }
 
+  .trackTitle {
+    margin-right: -20vw;
+    font-size: large;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
   h2 {
     margin-bottom: 1vh;
     margin-top: -3vh;
@@ -159,24 +172,21 @@
 
   .Tracks {
     margin: auto;
-    text-align: center;
-    font-weight: bold;
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
     max-width: 25vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
     font-size: large;
     vertical-align: middle;
-    background-color: rgba(150, 150, 150, 0.9);
     border: 3px #ed008d;
     border-style: solid;
+    background-color: rgba(150, 150, 150, 0.9);
   }
   .list {
     line-height: 2;
-    text-align: left;
-    max-height: 400px;
-    width: 37vw;
+    max-height: 50vh;
+    width: 43vw;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-left: 5px;
@@ -185,9 +195,10 @@
   .track {
     font-size: small;
     width: 35vw;
-    height: 50px;
-    margin-bottom: 5px;
+    height: 4vh;
+    margin-bottom: 8px;
   }
+
   .track:hover {
     cursor: pointer;
     background-color: #ed008d;
@@ -200,7 +211,7 @@
   .Player {
     display: inline-block;
     margin-top: 10vh;
-    margin-left: 2.5vw;
+    margin-left: 5vw;
     width: 35vw;
     height: 35vh;
     vertical-align: middle;
@@ -264,9 +275,16 @@
     border-style: solid;
   }
 
+  .trackTitle {
+    margin-right: -20vw;
+    font-size: large;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
   h2 {
-    margin-bottom: 1vh;
-    margin-top: -3vh;
+    display: none;
   }
 
   .header Button {
@@ -277,13 +295,11 @@
 
   .Tracks {
     margin: auto;
-    text-align: center;
-    font-weight: bold;
     padding-right: 20vw;
     height: 60vh;
     display: inline-block;
     max-width: 25vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
     font-size: large;
     vertical-align: middle;
     border: 3px #ed008d;
@@ -292,9 +308,8 @@
   }
   .list {
     line-height: 2;
-    text-align: left;
-    max-height: 400px;
-    width: 37vw;
+    max-height: 50vh;
+    width: 43vw;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-left: 5px;
@@ -303,9 +318,9 @@
   .track {
     font-size: small;
     width: 35vw;
-    height: 50px;
-    margin-bottom: 5px;
+    height: auto;
   }
+
   .track:hover {
     cursor: pointer;
     background-color: #ed008d;
@@ -317,10 +332,10 @@
 
   .Player {
     display: inline-block;
-    margin-top: 10vh;
-    margin-left: 2.5vw;
+    margin-top: 20vh;
+    margin-left: 5vw;
     width: 35vw;
-    height: 35vh;
+    height: 20vh;
     vertical-align: middle;
   }
   .commentInput {
