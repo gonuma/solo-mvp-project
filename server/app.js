@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const express = require("express");
 const path = require("path");
 const db = require("./db");
@@ -45,6 +46,18 @@ app.get("/songs", async (req, res) => {
     res.json(songs);
   } catch (err) {
     console.error("Error fetching songs", err);
+    res.sendStatus(500);
+  }
+});
+
+app.post("/songs/:song/:url", async (req, res) => {
+  try {
+    await db("songs")
+      .update({ url: req.params.url })
+      .where("song_name", "=", req.params.song);
+    res.send(`${req.params.url} added!`);
+  } catch (err) {
+    console.error("Error inserting URL", err);
     res.sendStatus(500);
   }
 });

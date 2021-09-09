@@ -9,35 +9,49 @@ function App(props) {
   const [selectedVid, setSelectedVid] = useState("Default");
   const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
-  const [youtubeVideo, setYoutubeVideo] = useState(
-    "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  );
+  const [youtubeVideo, setYoutubeVideo] = useState("dQw4w9WgXcQ");
 
-  const API = "AIzaSyDTlAN8Wbd6CyQKeGJs6S8UY3eOZbSJlj8";
+  const API = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
   const resultLimit = 1;
+
+  useEffect(() => {
+    axios.post(`/songs/${selectedVid}/${youtubeVideo}`);
+    // .then((res) => console.log(res.data));
+    // console.log(selectedVid, youtubeVideo);
+  }, [youtubeVideo]);
 
   let temp = [];
   useEffect(() => {
     temp = trackList;
     axios.get("/songs").then((res) => {
       for (const track of res.data) {
-        let urlSong = track.song_name;
-        if (track.song_name.includes(" ")) {
-          urlSong = track.song_name.replaceAll(" ", "%20");
+        if (track.url) {
+          console.log(track);
+          trackList.unshift({
+            group: track.band_name,
+            song: track.song_name,
+            url: track.url,
+          });
         }
-        let urlGroup = track.band_name;
-        if (track.band_name.includes(" ")) {
-          urlGroup = track.band_name.replaceAll(" ", "%20");
-        }
-        let urlQuery = `${urlGroup}%20${urlSong}`;
 
-        trackList.unshift({
-          group: track.band_name,
-          song: track.song_name,
-          query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
-        });
+        if (!track.url) {
+          let urlSong = track.song_name;
+          if (track.song_name.includes(" ")) {
+            urlSong = track.song_name.replaceAll(" ", "%20");
+          }
+          let urlGroup = track.band_name;
+          if (track.band_name.includes(" ")) {
+            urlGroup = track.band_name.replaceAll(" ", "%20");
+          }
+          let urlQuery = `${urlGroup}%20${urlSong}`;
+
+          trackList.unshift({
+            group: track.band_name,
+            song: track.song_name,
+            query: `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${resultLimit}&q=${urlQuery}&key=${API}`,
+          });
+        }
         setTrackList([...temp]);
-        console.log(trackList);
       }
     });
   }, []);
@@ -98,22 +112,29 @@ function App(props) {
         onClick={(e) => {
           for (const track of trackList)
             if (e.target.innerHTML === `${track.group} - ${track.song}`) {
-              return (
-                fetch(`${track.query}`)
+              if (track.url) {
+                axios
+                  .get(`/comments/${track.song}`)
+                  .then((res) => setComments(res.data));
+
+                return setYoutubeVideo(track.url);
+              }
+              if (!track.url) {
+                console.log("No URL found here");
+                return fetch(`${track.query}`)
                   .then((res) => res.json())
-                  // .then(console.log(track))
-                  .then((response) =>
-                    setYoutubeVideo(
-                      `https://www.youtube.com/embed/${response.items[0].id.videoId}`
-                    )
-                  )
+                  .then((response) => {
+                    let newVid = response.items[0].id.videoId;
+                    setYoutubeVideo(newVid);
+                  })
                   .then(setSelectedVid(track.song))
+
                   .then(
                     axios
                       .get(`/comments/${track.song}`)
                       .then((res) => setComments(res.data))
-                  )
-              );
+                  );
+              }
             }
         }}
       />
