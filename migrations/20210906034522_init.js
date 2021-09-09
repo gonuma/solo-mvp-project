@@ -12,7 +12,7 @@ exports.up = async function (knex) {
 
     table.string("song_name").notNullable().unique();
 
-    table.string("url").unique();
+    table.string("url");
 
     table.timestamp("created_at").defaultTo(knex.fn.now());
   });
