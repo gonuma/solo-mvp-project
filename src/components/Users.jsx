@@ -9,6 +9,7 @@ const {
 return (
     <div className="header"> 
         <h1>musispace</h1>
+        <h2>Share music you like with people you love!</h2>
         <button id="deleteButton" type="submit" onClick={deleteEntry}>Delete Song</button>
         <button type="submit" onClick={onClick}>Add Song</button>
         <input id="groupInput" placeholder="Group Name"></input>
