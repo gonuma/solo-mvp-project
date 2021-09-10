@@ -116,7 +116,7 @@ function App(props) {
                 axios
                   .get(`/comments/${track.song}`)
                   .then((res) => setComments(res.data));
-
+                setSelectedVid(track.song);
                 return setYoutubeVideo(track.url);
               }
               if (!track.url) {

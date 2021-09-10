@@ -69,6 +69,7 @@
   }
 
   .track {
+    font-weight: 600;
     font-size: small;
     width: 35vw;
     height: 4vh;
@@ -193,6 +194,7 @@
   }
 
   .track {
+    font-weight: 600;
     font-size: small;
     width: 35vw;
     height: 4vh;
@@ -316,6 +318,7 @@
   }
 
   .track {
+    font-weight: 600;
     font-size: small;
     width: 35vw;
     height: auto;
