@@ -23,7 +23,7 @@ useEffect(() => {
             <button onClick={()=>{
                 let newComment = document.getElementsByClassName("commentInput")[0].value;
                 axios.post(`/comments/${selectedVid}/${newComment}`)
-                .then(comments.push({comment: newComment}))
+                .then(comments.push({comment: newComment})).then(document.getElementsByClassName("commentInput")[0].value = null)
             }
         }>Submit</button>
            <div className="comments">
