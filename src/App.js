@@ -1,17 +1,17 @@
 import "./style.css";
-import react, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Users from "./components/Users";
 import TrackList from "./components/TrackList";
 import Comments from "./components/Comments";
 
-function App(props) {
+function App() {
   const [selectedVid, setSelectedVid] = useState("Default");
   const [comments, setComments] = useState([]);
   const [trackList, setTrackList] = useState([]);
   const [youtubeVideo, setYoutubeVideo] = useState("dQw4w9WgXcQ");
 
-  const API = "AIzaSyBfPHBlVhS2FknDZr6pxXkKP2NhA-zt0xY";
+  const API = process.env.API_KEY;
   const resultLimit = 1;
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App(props) {
     axios.get("/songs").then((res) => {
       for (const track of res.data) {
         if (track.url) {
-          console.log(track);
+          // console.log(track);
           trackList.unshift({
             group: track.band_name,
             song: track.song_name,
